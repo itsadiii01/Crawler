@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture Knowledge Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <h1>🌾 Andhra Pradesh Agri Knowledge Base</h1>
+        <p class="subtitle">Intelligent search across AP agriculture websites, schemes, and policies</p>
+
+        <section id="search">
+            <input id="q" type="text" placeholder="Ask about crops, schemes, PDF content, agriculture policies..." />
+            <button onclick="performSearch()">🔍 Search</button>
+        </section>
+
+        <div class="loading" id="loading">Searching knowledge base...</div>
+        
+        <section id="results"></section>
+
+        <section id="crawl">
+            <h3>📥 Data Management</h3>
+            <button onclick="startCrawl()">🔄 Re-crawl Websites</button>
+            <span id="crawlmsg"></span>
+            <br><br>
+            <small>This will crawl the AP agriculture websites and update the knowledge base.</small>
+        </section>
+
+        <div id="status"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> 
